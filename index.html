@@ -27,7 +27,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101010'/%3E%3Ctext x='32' y='48' font-family='Arial,sans-serif' font-weight='700' font-size='46' text-anchor='middle' fill='%23CCF656'%3Ea%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Adélia Modesto","url":"https://adeliamodesto.github.io/","jobTitle":"Analista de Sistemas e Negócios","knowsAbout":["SAP S/4HANA","SAP Business One","SAP MM","SAP PM","Integração de sistemas","Análise de dados","Business Intelligence","Transformação digital","IA aplicada a processos","ERP","Marketplaces","E-commerce","Power BI","SQL","Processos"],"sameAs":["https://www.linkedin.com/in/adeliamodesto","https://github.com/adeliamodesto","https://enois.ia.br/perfil/adeliamodesto","https://www.tiktok.com/@adeliamodesto"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,300&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Cores oficiais do brandbook (Estúdio Amare). Lavanda Rosa confirmada no logotipo SVG oficial. */
@@ -66,6 +66,16 @@ body{background:var(--bg);color:var(--fg);font-family:"DM Sans",system-ui,-apple
 @media (hover:hover){.chips li:hover{transform:translateY(-2px)}}
 .chips svg{width:18px;height:18px;color:var(--e,var(--black));transition:transform .5s}
 .chips li:hover svg{transform:rotate(120deg)}
+/* Chips em balões (identidade visual) */
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:16px 10px;margin-top:22px;padding:0 0 10px}
+.chips li{position:relative;border-radius:22px;padding:10px 14px 10px 10px;gap:8px;font-size:.82rem;line-height:1.15}
+.chips li svg{flex:none;width:22px;height:22px}
+.chips li b{font-weight:800}
+.chips li i{font-weight:300;font-style:italic}
+.chips li::after{content:"";position:absolute;bottom:-8px;left:16px;width:14px;height:9px;background:var(--c);border-radius:0 0 100% 0}
+.chips li:nth-child(even)::after{left:auto;right:16px;border-radius:0 0 0 100%}
+.panel{padding-bottom:84px}
+
 
 /* Grupos e cartões */
 .group{display:grid;gap:12px}
@@ -171,12 +181,12 @@ var SITE={
   titulo:"Processos que viram sistemas.",
   resumo:"Analista de Sistemas e Negócios: SAP, dados (SQL e Power BI), integração e IA aplicada a processos.",
   areas:[
-    {t:"SAP S/4HANA e Business One",cor:"azul",el:"espiral"},
-    {t:"Integração e arquitetura de soluções",cor:"lime",el:"onda"},
-    {t:"Transformação digital",cor:"lavanda",el:"flor"},
-    {t:"IA aplicada a processos",cor:"amarelo",el:"estrela"},
-    {t:"Dados, SQL e Power BI",cor:"laranja",el:"onda"},
-    {t:"E-commerce e marketplaces",cor:"azul",el:"asterisco"}
+    {t:"SAP",s:" S/4HANA e Business One",cor:"azul",el:"espiral"},
+    {t:"Integra",s:"ção e arquitetura de soluções",cor:"lime",el:"estrela"},
+    {t:"Transforma",s:"ção digital",cor:"alab",el:"espiral"},
+    {t:"IA",s:" aplicada a processos",cor:"amarelo",el:"flor"},
+    {t:"Dados",s:", SQL e Power BI",cor:"laranja",el:"estrela"},
+    {t:"E-commerce",s:" e marketplaces",cor:"lavanda",el:"asterisco"}
   ],
   falas:["Vamos conectar processos e tecnologia?","Prefere conversar? O WhatsApp está logo abaixo.","Quer ver o que estou construindo? Abra o GitHub.","Quer falar de marketplace, ERP ou dados? Me chama no WhatsApp.","Sou do SAP (MM e PM) e de ERP. Vamos conversar?"],
   grupos:[
@@ -203,7 +213,7 @@ var SITE={
   document.documentElement.classList.add("js");
   var COR={azul:"cb",laranja:"cp",lime:"cl",lavanda:"cv",amarelo:"cm",preto:"cx",contorno:"outline"};
   var EL={espiral:"spiral",asterisco:"aster",onda:"wave",flor:"flower",estrela:"star"};
-  var CHIP={azul:["#4559E0","#fff","#CCF656"],laranja:["#FE7626","#101010","#101010"],lime:["#CCF656","#101010","#4559E0"],lavanda:["#F4C4EB","#101010","#4559E0"],amarelo:["#FEC42E","#101010","#101010"],preto:["#101010","#E5E5DC","#CCF656"]};
+  var CHIP={azul:["#4559E0","#fff","#CCF656"],laranja:["#FE7626","#101010","#CCF656"],lime:["#CCF656","#101010","#F4C4EB"],lavanda:["#F4C4EB","#101010","#4559E0"],amarelo:["#FEC42E","#101010","#FE7626"],alab:["#E5E5DC","#101010","#4559E0"],preto:["#101010","#E5E5DC","#CCF656"]};
   var ACC={azul:"#4559E0",laranja:"#FE7626"};
   var NS="http://www.w3.org/2000/svg";
   function $(id){return document.getElementById(id)}
@@ -224,7 +234,7 @@ var SITE={
   $("lead").textContent=SITE.titulo;
   $("sub").textContent=SITE.resumo;$("sub").hidden=!SITE.resumo;
   var ch=$("chips");
-  SITE.areas.forEach(function(x){var li=mk("li",null,x.t),c=CHIP[x.cor]||CHIP.amarelo;li.style.setProperty("--c",c[0]);li.style.setProperty("--t",c[1]);li.style.setProperty("--e",c[2]);li.insertBefore(icon(x.el),li.firstChild);ch.appendChild(li)});
+  SITE.areas.forEach(function(x){var li=mk("li"),c=CHIP[x.cor]||CHIP.amarelo;li.style.setProperty("--c",c[0]);li.style.setProperty("--t",c[1]);li.style.setProperty("--e",c[2]);var sp=mk("span","bt");sp.appendChild(mk("b",null,x.t));if(x.s)sp.appendChild(mk("i",null,x.s));li.appendChild(sp);li.insertBefore(icon(x.el),li.firstChild);ch.appendChild(li)});
 
   // balão
   var h=new Date().getHours(),g=h<5?"Boa madrugada":h<12?"Bom dia":h<18?"Boa tarde":"Boa noite";
