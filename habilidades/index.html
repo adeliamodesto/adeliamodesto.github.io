@@ -74,6 +74,32 @@ background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);ba
 .chips a:hover{background:var(--mik);color:var(--black);border-color:var(--mik)}
 .copy{text-align:center;font-size:.75rem;color:var(--sub);padding:22px 0 8px}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+/* método */
+.steps{list-style:none;display:grid;gap:12px;counter-reset:s}
+@media (min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps li{position:relative;border:1.5px solid var(--line);border-radius:24px;padding:18px 18px 16px}
+.steps li .mono{font-size:.8rem;color:var(--sub)}
+.steps h3{font-size:1.35rem;line-height:1.1;margin:6px 0 6px}
+.steps p{font-size:.95rem;color:var(--sub)}
+@media (min-width:760px){.steps li:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--pump);background:var(--bg);padding:0 2px}}
+/* casos */
+.cases{display:grid;gap:14px}
+@media (min-width:860px){.cases{grid-template-columns:repeat(3,1fr)}}
+.case{border-radius:28px;padding:22px;background:var(--c);color:var(--t,var(--black));display:flex;flex-direction:column;gap:10px}
+.case .tag{display:inline-block;width:fit-content;font-size:.75rem;border:1.5px solid currentColor;border-radius:999px;padding:4px 10px}
+.case h3{font-size:1.45rem;line-height:1.08}
+.case .ctx{font-size:.88rem;opacity:.85}
+.case dl{display:grid;gap:8px;margin-top:4px}
+.case dt{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.case dd{font-size:.96rem}
+.case dd.res{font-weight:700}
+/* matriz */
+.matrix{margin-top:-14px}
+.matrix div{display:grid;gap:4px;padding:14px 4px;border-bottom:1.5px solid var(--line)}
+@media (min-width:760px){.matrix div{grid-template-columns:260px 1fr;gap:18px;align-items:baseline}}
+.matrix dt{font-family:"Bricolage Grotesque",Georgia,sans-serif;font-weight:800;font-size:1.1rem}
+.matrix dd{color:var(--sub)}
+.matrix .est dt{color:var(--pump)}
 </style>
 </head>
 <body>
@@ -87,56 +113,65 @@ background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);ba
   <svg class="d2" viewBox="0 0 40 40" aria-hidden="true"><use href="#star"/></svg>
   <img class="hlogo" id="hlogo" alt="Adélia Modesto" hidden><span class="disp" id="hname" style="font-size:1.2rem">Adélia Modesto</span>
   <h1 class="disp">Habilidades</h1>
-  <p class="disp" style="font-size:clamp(1.3rem,4vw,1.9rem);font-weight:700;color:var(--lime);margin-bottom:8px">Processos que viram sistemas.</p>
-  <p>Analista de Sistemas e Negócios. O que eu sei fazer e onde já apliquei: SAP e ERP, dados, marketplace e IA.</p>
+  <p class="disp" style="font-size:clamp(1.3rem,4vw,1.9rem);font-weight:700;color:var(--lime);margin-bottom:8px">Do problema ao resultado.</p>
+  <p>Analista de Sistemas e Negócios. Entendo onde a operação trava, encontro a causa no processo ou no dado e organizo a solução dentro do sistema.</p>
   <button class="bal" id="bal" type="button" aria-live="polite" title="Toque para ver outra mensagem">Vamos conectar processos e tecnologia?</button>
   <a class="cta" href="https://www.linkedin.com/in/adeliamodesto" target="_blank" rel="noopener">Ver trajetória no LinkedIn <span aria-hidden="true">→</span></a>
 </section>
-<div class="lead"><h2 class="disp">Competências</h2></div>
-<div class="grid">
-<article class="svc cb">
-  <div class="num mono">01</div>
-  <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#spiral"/></svg>
-  <h2 class="disp">SAP e ERP</h2>
-  <ul><li>SAP MM e PM por mais de 9 anos, do ECC ao S/4HANA: compras, estoque, materiais e manutenção</li><li>Implantação do ERP Bling do zero, com fiscal e NF-e, integrado a seis marketplaces</li></ul>
-  <a class="prova" href="https://www.linkedin.com/in/adeliamodesto/details/experience/" target="_blank" rel="noopener">Ver experiência <span aria-hidden="true">→</span></a>
+
+<div class="lead"><h2 class="disp">Como eu trabalho</h2><span class="mono">4 passos</span></div>
+<ol class="steps">
+  <li><span class="mono">01</span><h3 class="disp">Diagnóstico</h3><p>Entendo onde a operação trava e quanto isso custa.</p></li>
+  <li><span class="mono">02</span><h3 class="disp">Processo</h3><p>Desenho, simplifico e padronizo o fluxo com a área.</p></li>
+  <li><span class="mono">03</span><h3 class="disp">Sistema</h3><p>Configuro, integro e treino: SAP, ERP, hubs e canais.</p></li>
+  <li><span class="mono">04</span><h3 class="disp">Dado e resultado</h3><p>Meço com indicadores e ajusto até o resultado aparecer.</p></li>
+</ol>
+
+<div class="lead"><h2 class="disp">Casos</h2><span class="mono">problema, o que fiz, resultado</span></div>
+<div class="cases">
+<article class="case cb">
+  <div class="tag mono">SAP PM + MM</div>
+  <h3 class="disp">Manutenção ligada às compras</h3>
+  <p class="ctx">Assistência técnica de equipamentos de academia, 2011 a 2020</p>
+  <dl>
+    <dt>Problema</dt><dd>Ordens de manutenção dependentes de peça, com a compra e a ordem em fluxos separados.</dd>
+    <dt>O que fiz</dt><dd>Liguei ordem, requisição, pedido, entrada e consumo no SAP PM e MM. Participei da migração do ECC para o S/4HANA.</dd>
+    <dt>Resultado</dt><dd class="res">Média de 180 ordens de serviço por mês, da abertura ao encerramento.</dd>
+  </dl>
 </article>
-<article class="svc cp">
-  <div class="num mono">02</div>
-  <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#aster"/></svg>
-  <h2 class="disp">Business Analytics e BI</h2>
-  <ul><li>Dashboards e indicadores em Power BI, SQL e Excel avançado</li><li>Curva ABC, margem, ROAS e conversão por canal</li></ul>
-  <a class="prova" href="https://github.com/adeliamodesto/dashboard-marketplace" target="_blank" rel="noopener">Ver projeto no GitHub <span aria-hidden="true">→</span></a>
+<article class="case cv">
+  <div class="tag mono">ERP + 6 canais</div>
+  <h3 class="disp">Da loja física ao digital</h3>
+  <p class="ctx">Varejo infantil 100% físico, 2021 a 2025</p>
+  <dl>
+    <dt>Problema</dt><dd>Loja sem venda online, sem ERP e com pouco controle de estoque.</dd>
+    <dt>O que fiz</dt><dd>Implantei o ERP Bling com fiscal e NF-e, padronizei 1.200 SKUs e integrei a loja virtual a seis marketplaces.</dd>
+    <dt>Resultado</dt><dd class="res">600 pedidos por mês. Faturamento +50% em 2022 e cerca de +70% em 2024–2025.</dd>
+  </dl>
 </article>
-<article class="svc cm">
-  <div class="num mono">03</div>
-  <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#daisy"/></svg>
-  <h2 class="disp">Supply chain e operações</h2>
-  <ul><li>180 ordens de serviço por mês no SAP PM, com as compras de peças integradas ao MM</li><li>Mapeamento e melhoria de processos de compras, estoque e pedidos</li></ul>
-  <a class="prova" href="https://www.linkedin.com/in/adeliamodesto/details/experience/" target="_blank" rel="noopener">Ver experiência <span aria-hidden="true">→</span></a>
-</article>
-<article class="svc cv">
-  <div class="num mono">04</div>
-  <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#blob"/></svg>
-  <h2 class="disp">Produto e growth</h2>
-  <ul><li>Catálogo, precificação por margem, mix e kits em marketplaces e e-commerce</li><li>Faturamento +50% em 2022 e cerca de +70% em 2024–2025 numa operação estruturada do zero</li></ul>
-  <a class="prova" href="https://www.linkedin.com/in/adeliamodesto/details/projects/" target="_blank" rel="noopener">Ver projetos <span aria-hidden="true">→</span></a>
-</article>
-<article class="svc cl">
-  <div class="num mono">05</div>
-  <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#star"/></svg>
-  <h2 class="disp">Integração e auditoria</h2>
-  <ul><li>Integração entre ERP, hubs, loja virtual e marketplaces</li><li>Auditoria de cadastros, estoque e dados fiscais, com mais de 10 anos de experiência fiscal</li></ul>
-  <a class="prova" href="https://www.linkedin.com/in/adeliamodesto/details/projects/" target="_blank" rel="noopener">Ver projetos <span aria-hidden="true">→</span></a>
-</article>
-<article class="svc cb">
-  <div class="num mono">06</div>
-  <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#mini"/></svg>
-  <h2 class="disp">Uso prático de IA</h2>
-  <ul><li>Agentes de IA na operação, com rotinas agendadas, regra, controle e registro</li><li>IA aplicada ao dia a dia, adaptada a cada área</li></ul>
-  <a class="prova" href="https://www.linkedin.com/in/adeliamodesto/recent-activity/all/" target="_blank" rel="noopener">Ver publicações <span aria-hidden="true">→</span></a>
+<article class="case cl">
+  <div class="tag mono">Operação multicanal</div>
+  <h3 class="disp">Cadastro, margem e canal próprio</h3>
+  <p class="ctx">Empresa de ferramentas e fixação, atual</p>
+  <dl>
+    <dt>Problema</dt><dd>Duas contas de marketplace, ERP e hub com cadastros divergentes e margem pressionada.</dd>
+    <dt>O que fiz</dt><dd>Auditoria de SKUs entre Bling, Magis5 e Letzee, precificação por margem e e-commerce próprio criado do zero.</dd>
+    <dt>Resultado</dt><dd class="res">E-commerce no ar em menos de 10 dias e operação acompanhada por dashboard.</dd>
+  </dl>
 </article>
 </div>
+
+<div class="lead"><h2 class="disp">Competências e ferramentas</h2></div>
+<dl class="matrix">
+  <div><dt>SAP e ERP</dt><dd>SAP MM, PM, S/4HANA, Fiori e Business One · Bling, Tiny e Magis5</dd></div>
+  <div><dt>Business Analytics e BI</dt><dd>Power BI, SQL e Excel avançado · curva ABC, margem, ROAS e conversão</dd></div>
+  <div><dt>Processos e supply chain</dt><dd>Mapeamento, KPIs, compras, estoque e auditoria · mais de 10 anos de experiência fiscal e tributária</dd></div>
+  <div><dt>Produto e growth</dt><dd>Catálogo, precificação por margem, mix e kits, novos canais</dd></div>
+  <div><dt>Integração</dt><dd>ERP, hubs, loja virtual e marketplaces</dd></div>
+  <div><dt>IA aplicada</dt><dd>Agentes de IA e automações na rotina, com regra, controle e registro</dd></div>
+  <div class="est"><dt>Em estudo</dt><dd>SAP S/4HANA MM, SD e PP · Power BI (PL-300) · Sistemas de Informação (FIAP)</dd></div>
+</dl>
+
 <section class="foot">
   <h2 class="disp">Aberta a oportunidades no Rio de Janeiro e em todo o Brasil.</h2>
   <p>Presencial ou híbrido no Rio de Janeiro, ou remoto. Escolha o canal que preferir.</p>
