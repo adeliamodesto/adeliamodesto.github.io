@@ -43,6 +43,10 @@ background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);ba
 @media (prefers-reduced-motion:reduce){.hero .d1{animation:none}}
 .cta{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:var(--pump);color:var(--black);font-weight:700;text-decoration:none;border-radius:999px;padding:14px 22px;font-size:1rem}
 .cta:hover{background:var(--mik)}
+.bal{position:relative;display:block;width:fit-content;max-width:100%;margin-top:22px;background:var(--blue);color:#fff;border-radius:999px;padding:10px 18px;font-size:.92rem;font-weight:500}
+.bal::after{content:"";position:absolute;left:30px;bottom:-7px;width:14px;height:14px;background:var(--blue);transform:rotate(45deg);border-radius:0 0 4px 0}
+.bal+.cta{margin-top:20px}
+@media (min-width:760px){.grid .svc:last-child{grid-column:1/-1;min-height:0}}
 /* lista editorial */
 .lead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:34px 4px 14px;border-bottom:1.5px solid var(--line);padding-bottom:10px}
 .lead h2{font-size:1.6rem}
@@ -50,7 +54,7 @@ background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);ba
 .grid{display:grid;gap:14px}
 @media (min-width:760px){.grid{grid-template-columns:1fr 1fr}}
 .svc{position:relative;border-radius:28px;padding:22px 22px 20px;background:var(--c);color:var(--t,var(--black));display:flex;flex-direction:column;gap:12px;min-height:240px}
-.cb{--c:var(--blue);--t:#fff;--e:var(--lime)}.cv{--c:var(--lav);--e:var(--blue)}.cl{--c:var(--lime);--e:var(--blue)}.cp{--c:var(--pump);--e:var(--black)}
+.cb{--c:var(--blue);--t:#fff;--e:var(--lime)}.cv{--c:var(--lav);--e:var(--blue)}.cl{--c:var(--lime);--e:var(--blue)}.cp{--c:var(--pump);--e:var(--black)}.cm{--c:var(--mik);--e:var(--black)}
 .svc .num{font-size:.8rem;opacity:.8}
 .svc .ico{position:absolute;top:18px;right:18px;width:46px;height:46px;color:var(--e)}
 .svc h2{font-size:clamp(1.5rem,5vw,2rem);line-height:1.05;padding-right:56px}
@@ -80,7 +84,9 @@ background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);ba
   <svg class="d2" viewBox="0 0 40 40" aria-hidden="true"><use href="#star"/></svg>
   <img class="hlogo" id="hlogo" alt="Adélia Modesto" hidden><span class="disp" id="hname" style="font-size:1.2rem">Adélia Modesto</span>
   <h1 class="disp">Serviços</h1>
-  <p>Atuação autônoma em projetos e demandas de consultoria, implementação, integração e otimização de sistemas, processos e operações de negócio.</p>
+  <p class="disp" style="font-size:clamp(1.3rem,4vw,1.9rem);font-weight:700;color:var(--lime);margin-bottom:8px">Processos que viram sistemas.</p>
+  <p>Consultoria e projetos em SAP, dados, IA e marketplace, do desenho do processo até a operação funcionando.</p>
+  <span class="bal">Vamos conectar processos e tecnologia?</span>
   <a class="cta" href="https://wa.me/5521991833636?text=Oi%2C%20Ad%C3%A9lia!%20Vi%20sua%20p%C3%A1gina%20de%20servi%C3%A7os%20e%20gostaria%20de%20conversar%20com%20voc%C3%AA." target="_blank" rel="noopener">Falar no WhatsApp <span aria-hidden="true">→</span></a>
 </section>
 <div class="lead"><h2 class="disp">Serviços oferecidos</h2></div>
@@ -95,19 +101,25 @@ background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);ba
   <div class="num mono">02</div>
   <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#aster"/></svg>
   <h2 class="disp">IA e automação</h2>
-  <ul><li>IA aplicada a SAP e ERP: assistentes inteligentes, agentes de IA, análise de informações e processamento inteligente de documentos</li><li>Automação inteligente de processos (RPA), workflows e integração entre sistemas</li><li>IA generativa aplicada a atendimento, CRM, análise de dados e operações empresariais</li></ul>
+  <ul><li>IA aplicada a SAP e ERP: assistentes inteligentes, agentes de IA, análise de informações e processamento inteligente de documentos</li><li>Automação inteligente de processos (RPA), workflows e integração entre sistemas</li><li>IA generativa aplicada a atendimento, CRM, análise de dados e operações empresariais</li><li>Uso prático de IA no dia a dia, adaptado ao cargo e à função de cada área</li></ul>
 </article>
 <article class="svc cl">
   <div class="num mono">03</div>
   <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#star"/></svg>
-  <h2 class="disp">Dados</h2>
-  <ul><li>Desenvolvimento de dashboards, indicadores e análises com Power BI e SQL</li></ul>
+  <h2 class="disp">Dados e Business Analytics</h2>
+  <ul><li>Business Analytics (BA) aplicado a supply chain, vendas e operações</li><li>Análise orientada a dados e BI</li><li>Desenvolvimento de dashboards, indicadores e análises com Power BI e SQL</li></ul>
 </article>
 <article class="svc cp">
   <div class="num mono">04</div>
   <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#blob"/></svg>
   <h2 class="disp">Marketplace e e-commerce</h2>
-  <ul><li>Gestão e otimização de marketplaces: precificação, Ads, catálogo e estoque</li><li>Estruturação, implantação e otimização de operações de e-commerce e lojas virtuais</li></ul>
+  <ul><li>Gestão e otimização de marketplaces: precificação, Ads, catálogo e estoque</li><li>Estruturação, implantação e otimização de operações de e-commerce e lojas virtuais</li><li>Visão de produto e growth: do catálogo ao crescimento das vendas</li></ul>
+</article>
+<article class="svc cm">
+  <div class="num mono">05</div>
+  <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#daisy"/></svg>
+  <h2 class="disp">Processos, operações e auditoria</h2>
+  <ul><li>Auditoria de processos e de informações</li><li>Desenho e melhoria de processos, com KPIs e indicadores</li></ul>
 </article>
 </div>
 <section class="foot">
