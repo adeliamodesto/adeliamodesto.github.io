@@ -30,8 +30,6 @@ a{color:inherit}
 /* topo */
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 4px 14px}
 .top img{height:40px;width:auto;display:block}
-.top .back{font-size:.85rem;text-decoration:none;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;white-space:nowrap}
-.top .back:hover{background:var(--fg);color:var(--bg)}
 /* hero */
 .hero{position:relative;overflow:hidden;background:var(--black);color:var(--alab);border-radius:32px;padding:34px 22px 30px;
 background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);background-size:18px 18px}
@@ -59,7 +57,6 @@ background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);ba
 .svc ul{list-style:none;display:grid;gap:8px;font-size:.97rem}
 .svc li{padding-left:18px;position:relative}
 .svc li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.75}
-.svc .ask{margin-top:auto;align-self:flex-start;text-decoration:none;font-weight:700;font-size:.92rem;border-bottom:2px solid currentColor;padding-bottom:2px}
 /* rodapé */
 .foot{margin-top:22px;border:1.5px solid var(--line);border-radius:28px;padding:22px}
 .foot h2{font-size:1.35rem;margin-bottom:6px}
@@ -77,7 +74,6 @@ background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);ba
 <div class="wrap">
 <header class="top">
   <span class="mono" style="font-size:.8rem">Serviços</span>
-  <a class="back" href="/">Todos os links</a>
 </header>
 <section class="hero">
   <svg class="d1" viewBox="0 0 40 40" aria-hidden="true"><use href="#spiral"/></svg>
@@ -85,44 +81,40 @@ background-image:radial-gradient(rgba(229,229,220,.13) 1px,transparent 1.3px);ba
   <img class="hlogo" id="hlogo" alt="Adélia Modesto" hidden><span class="disp" id="hname" style="font-size:1.2rem">Adélia Modesto</span>
   <h1 class="disp">Serviços</h1>
   <p>Atuação autônoma em projetos e demandas de consultoria, implementação, integração e otimização de sistemas, processos e operações de negócio.</p>
-  <a class="cta" href="https://wa.me/5521991833636?text=Oi%2C%20Ad%C3%A9lia%2C%20vim%20pela%20sua%20p%C3%A1gina%20de%20servi%C3%A7os%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener">Falar no WhatsApp <span aria-hidden="true">→</span></a>
+  <a class="cta" href="https://wa.me/5521991833636?text=Oi%2C%20Ad%C3%A9lia!%20Vi%20sua%20p%C3%A1gina%20de%20servi%C3%A7os%20e%20gostaria%20de%20conversar%20com%20voc%C3%AA." target="_blank" rel="noopener">Falar no WhatsApp <span aria-hidden="true">→</span></a>
 </section>
-<div class="lead"><h2 class="disp">Serviços oferecidos</h2><span class="mono">04 frentes</span></div>
+<div class="lead"><h2 class="disp">Serviços oferecidos</h2></div>
 <div class="grid">
 <article class="svc cb">
   <div class="num mono">01</div>
   <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#spiral"/></svg>
   <h2 class="disp">SAP e ERP</h2>
   <ul><li>Consultoria funcional SAP: MM, PM e SD | SAP S/4HANA | Fiori</li><li>Parametrização e configuração funcional via SPRO</li><li>Implantação, integração e otimização de sistemas ERP</li></ul>
-  <a class="ask" href="https://wa.me/5521991833636?text=Oi%2C%20Ad%C3%A9lia%2C%20vim%20pela%20sua%20p%C3%A1gina%20de%20servi%C3%A7os%20e%20quero%20conversar%20sobre%20consultoria%20SAP%20e%20ERP." target="_blank" rel="noopener">Conversar sobre SAP e ERP <span aria-hidden="true">→</span></a>
 </article>
 <article class="svc cv">
   <div class="num mono">02</div>
   <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#aster"/></svg>
   <h2 class="disp">IA e automação</h2>
   <ul><li>IA aplicada a SAP e ERP: assistentes inteligentes, agentes de IA, análise de informações e processamento inteligente de documentos</li><li>Automação inteligente de processos (RPA), workflows e integração entre sistemas</li><li>IA generativa aplicada a atendimento, CRM, análise de dados e operações empresariais</li></ul>
-  <a class="ask" href="https://wa.me/5521991833636?text=Oi%2C%20Ad%C3%A9lia%2C%20vim%20pela%20sua%20p%C3%A1gina%20de%20servi%C3%A7os%20e%20quero%20conversar%20sobre%20IA%20e%20automa%C3%A7%C3%A3o." target="_blank" rel="noopener">Conversar sobre IA e automação <span aria-hidden="true">→</span></a>
 </article>
 <article class="svc cl">
   <div class="num mono">03</div>
   <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#star"/></svg>
   <h2 class="disp">Dados</h2>
   <ul><li>Desenvolvimento de dashboards, indicadores e análises com Power BI e SQL</li></ul>
-  <a class="ask" href="https://wa.me/5521991833636?text=Oi%2C%20Ad%C3%A9lia%2C%20vim%20pela%20sua%20p%C3%A1gina%20de%20servi%C3%A7os%20e%20quero%20conversar%20sobre%20dashboards%20e%20dados." target="_blank" rel="noopener">Conversar sobre dados <span aria-hidden="true">→</span></a>
 </article>
 <article class="svc cp">
   <div class="num mono">04</div>
   <svg class="ico" viewBox="0 0 40 40" aria-hidden="true"><use href="#blob"/></svg>
   <h2 class="disp">Marketplace e e-commerce</h2>
   <ul><li>Gestão e otimização de marketplaces: precificação, Ads, catálogo e estoque</li><li>Estruturação, implantação e otimização de operações de e-commerce e lojas virtuais</li></ul>
-  <a class="ask" href="https://wa.me/5521991833636?text=Oi%2C%20Ad%C3%A9lia%2C%20vim%20pela%20sua%20p%C3%A1gina%20de%20servi%C3%A7os%20e%20quero%20conversar%20sobre%20marketplace%20e%20e-commerce." target="_blank" rel="noopener">Conversar sobre marketplace e e-commerce <span aria-hidden="true">→</span></a>
 </article>
 </div>
 <section class="foot">
   <h2 class="disp">Atendimento a empresas e profissionais em todo o Brasil.</h2>
   <p>Escolha o canal que preferir.</p>
   <div class="chips">
-    <a class="wa" href="https://wa.me/5521991833636?text=Oi%2C%20Ad%C3%A9lia%2C%20vim%20pela%20sua%20p%C3%A1gina%20de%20servi%C3%A7os." target="_blank" rel="noopener">WhatsApp</a>
+    <a class="wa" href="https://wa.me/5521991833636?text=Oi%2C%20Ad%C3%A9lia!%20Vi%20sua%20p%C3%A1gina%20de%20servi%C3%A7os%20e%20gostaria%20de%20conversar%20com%20voc%C3%AA." target="_blank" rel="noopener">WhatsApp</a>
     <a href="https://www.linkedin.com/in/adeliamodesto" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/adeliamodesto" target="_blank" rel="noopener">GitHub</a>
     <a href="mailto:adeliamodesto@icloud.com">E-mail</a>
